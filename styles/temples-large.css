@@ -1,0 +1,42 @@
+/* Styles for larger screens */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav button {
+    display: none; /* Hide hamburger button on larger screens */
+}
+
+main {
+    max-width: 1200px; /* Increase max-width to fit more images */
+    margin: 20px auto;
+    padding: 0 10px;
+    text-align: center; /* Center the content */
+    font-size: 1.2em; /* Increase the size of the content */
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Increase gap for better spacing */
+}
+
+#gallery img {
+    width: 100%;
+    height: auto;
+}
