@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navUl = document.querySelector('nav ul');
+    const lastModifiedSpan = document.getElementById('lastModified');
 
     hamburger.addEventListener('click', function() {
         navUl.classList.toggle('active');
@@ -10,4 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.innerHTML = '&#9776;'; // Change back to hamburger icon
         }
     });
+
+    // Update the last modified date
+    lastModifiedSpan.textContent = document.lastModified;
 });
