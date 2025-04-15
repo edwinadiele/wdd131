@@ -1,75 +1,164 @@
+/* Base styles for the website */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-  }
-  
-  header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-  }
-  
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  nav ul li {
-    margin: 0 1rem;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav a.active {
-    text-decoration: underline;
-  }
-  
-  main {
-    padding: 2rem;
-    max-width: 960px;
-    margin: auto;
-  }
-  
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  .gallery img {
-    width: 100%;
-    max-width: 300px;
-    margin: 0.5rem;
-  }
-  
-  form {
-    display: flex;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding-top: 60px; /* Space for fixed header */
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  z-index: 1000;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+header nav {
+  float: right;
+}
+
+header nav button {
+  display: none;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+}
+
+main {
+  padding: 20px;
+  margin-top: 60px; /* Space for fixed header */
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes zoom-in {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-zoom-in {
+  animation: zoom-in 1s ease-out forwards;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-mode header {
+  background-color: #444;
+}
+
+body.dark-mode footer {
+  background-color: #444;
+}
+
+body.dark-mode .logo img {
+  filter: invert(1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
     flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
   }
-  
-  input, textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+
+  header nav ul li {
+    margin-left: 0;
+    padding: 10px;
+    border-bottom: 1px solid #555;
   }
-  
-  button {
-    padding: 0.5rem;
-    background-color: #444;
-    color: #fff;
+
+  header nav button {
+    display: block;
+    font-size: 30px;
+    background-color: transparent;
     border: none;
+    color: white;
   }
-  
-  @media (min-width: 600px) {
-    nav ul {
-      justify-content: flex-end;
-      margin-right: 2rem;
-    }
+
+  header nav ul.show {
+    display: flex;
   }
-  
+}
+
+
+main {
+  padding: 20px;
+  margin-top: 60px; /* for fixed header */
+  padding-bottom: 80px; /* add this line to make room for the footer */
+}

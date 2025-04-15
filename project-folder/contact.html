@@ -3,35 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact us today" />
-  <title>Contact Us</title>
+  <meta name="description" content="Contact WildEscape Adventures to plan your next journey." />
+  <title>WildEscape Adventures | Contact</title>
   <link rel="stylesheet" href="styles/style.css" />
+  <!-- <link rel="stylesheet" href="styles/larger.css" /> -->
+  <link rel="icon" href="images/tyrannosaurus-rex_472807.png" type="image/png">
+  <script defer src="scripts/script.js"></script>
 </head>
 <body>
   <header>
+    <div class="logo">
+      <img src="images/tyrannosaurus-rex_472807.png" alt="WildEscape Adventures Logo" />
+      <h1>WildEscape Adventures</h1>
+    </div>
     <nav>
-      <ul>
+      <button id="menu" aria-label="Toggle navigation menu">☰</button>
+      <ul class="navigation">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html" class="active">Contact Us</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        <li><a href="references.html">References</a></li>
       </ul>
     </nav>
   </header>
-  <main>
-    <h1>Contact Us</h1>
-    <form id="contactForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required />
-      <label for="email">Email:</label>
-      <input type="email" id="email" required />
-      <label for="message">Message:</label>
-      <textarea id="message" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
+
+  <main class="contact">
+    <section class="contact-intro animate-fade-in">
+      <h2>Contact Us</h2>
+      <p>Have questions or ready to book your next adventure? Reach out to us using the form below or via our contact details.</p>
+    </section>
+
+    <section class="contact-form">
+      <form action="#" method="post" class="animate-zoom-in">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
   </main>
+
   <footer>
-    <p>&copy; <span id="currentyear">2025</span>⚓Adiele Edwin Obinna⚓Lagos Nigeria. <a href="references.html">References</a></p>
+    <p>&copy; <span id="year">2025</span> ⚓Adiele Edwin Obinna⚓Lagos Nigeria⚓ WildEscape Adventures. All rights reserved.</p>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
   </footer>
-  <script src="js/scripts.js"></script>
 </body>
 </html>
